@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>LED Steuerung</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>LED-Farbe einstellen</h2>
-    <form id="ledForm">
-        <label>Zahlenwert (0-100):</label>
-        <input type="number" id="value" min="0" max="100" required>
-        <br>
-        <label>Optionaler Text:</label>
-        <input type="text" id="message" maxlength="100">
-        <br>
-        <button type="submit">Speichern</button>
-    </form>
+
+    <h1 id="statement">Loading statement...</h1>
+
+    <div class="slider-container">
+        <span class="slider-label">Disagree</span>
+        <input type="range" id="slider" min="0" max="100" value="50">
+        <span class="slider-label">Agree</span>
+    </div>
+    <p>Value: <span id="slider-value">50</span></p>
+
+    <p><b>Want to add your own statement?</b> (Optional)</p>
+    <textarea id="custom-text" placeholder="Please enter text."></textarea>
+
+    <div>
+        <button class="clear-btn" onclick="clearInputs()">Clear Answers</button>
+        <button class="submit-btn" onclick="submitAnswer()">Submit Answer</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+<!-- To run locally, open a terminal in f:\Dev\Aura\AURA and run:
+     python -m http.server
+     Then open http://localhost:8000 in your browser. -->
